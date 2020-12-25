@@ -11,7 +11,7 @@ Simply clone this repository into its own directory in your document root of you
 	$ cd [document root]
 	$ git clone https://github.com/marcantondahmen/sitemad sitemad
 
-You can then navigate to `https://localhost/sitemad to use Sitemad.
+You can then navigate to https://localhost/sitemad to use Sitemad.
 
 ## Configuration
 
