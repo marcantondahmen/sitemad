@@ -1,0 +1,8 @@
+:root {
+	--navbar-height: 7rem;
+	--navbar-horizontal-padding: 2.25rem;
+	--navbar-brand-font-size: 2rem;
+	--navbar-brand-font-weight: 600;
+	--base-font-size: 1.65rem;
+	--base-line-height: 1.5;
+}
