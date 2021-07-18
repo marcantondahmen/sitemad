@@ -1,7 +1,7 @@
 {
 	"maxdepth": 8,
 	"dashboards": {
-		"/automad/gui": "/dashboard"
+		"/automad/init.php": "/dashboard"
 	},
 	"ignore": "archive|node_modules|.git|.hg|vendor|cache|_modules|sitemad"
 }
