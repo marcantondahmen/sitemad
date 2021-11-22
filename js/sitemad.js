@@ -1,26 +1,26 @@
-+function() {
+const filter = document.getElementById('filter'),
+	sites = document.getElementById('sites'),
+	rows = Array.prototype.slice.apply(sites.querySelectorAll('tbody tr'));
 
-	const filter = document.getElementById('filter'),
-		  sites = document.getElementById('sites'),
-		  rows = Array.prototype.slice.apply(sites.querySelectorAll('tbody tr'));
+filter.addEventListener('keyup', function () {
+	let filterValues = filter.value.toLowerCase().split(' ');
 
-	filter.addEventListener('keyup', function() {
+	rows.forEach((row) => {
+		row.classList.remove('d-none');
 
-		let filterValues = filter.value.toLowerCase().split(' ');
-		
-		rows.forEach(row => {
-
-			row.classList.remove('d-none');
-
-			for (var i = 0; i < filterValues.length; i++) {
-				if (row.textContent.indexOf(filterValues[i]) == -1) {
-					row.classList.add('d-none');
-					break;
-				}
+		for (var i = 0; i < filterValues.length; i++) {
+			if (row.textContent.indexOf(filterValues[i]) == -1) {
+				row.classList.add('d-none');
+				break;
 			}
-
-		});
-
+		}
 	});
+});
 
-}();
+const proxies = Array.from(document.querySelectorAll('.proxy'));
+
+proxies.forEach((proxy) => {
+	fetch(proxy.href, { mode: 'no-cors' }).catch((err) => {
+		proxy.remove();
+	});
+});

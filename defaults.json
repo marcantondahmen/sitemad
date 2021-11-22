@@ -3,5 +3,9 @@
 	"dashboards": {
 		"/automad/init.php": "/dashboard"
 	},
+	"proxies": {
+		"/automad/node_modules/browser-sync": "http://localhost:3000",
+		"/../vercel.json": "http://localhost:3000"
+	},
 	"ignore": "archive|node_modules|.git|.hg|vendor|cache|_modules|sitemad"
 }

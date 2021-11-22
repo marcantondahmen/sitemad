@@ -66,10 +66,17 @@ class Sitemad {
 			$separator = '<svg class="text-muted" xmlns="http://www.w3.org/2000/svg" width="0.7em" height="0.7em" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>';
 			$text = str_replace('/', " $separator ", trim($url, '/'));
 			$dashboard = '';
+			$proxy = '';
 
 			foreach ($this->config->dashboards as $item => $slug) {
 				if (is_readable("$path$item")) {
-					$dashboard = '<a href="' . $url . $slug . '" class="btn btn-sm btn-rounded text-capitalize" target="_blank">Login</a>';
+					$dashboard = '<a href="' . $url . $slug . '" class="btn btn-sm btn-rounded" target="_blank">Login</a>';
+				}
+			}
+
+			foreach ($this->config->proxies as $item => $proxyUrl) {
+				if (is_readable("$path$item")) {
+					$proxy = '<a href="' . $proxyUrl . $url . '" class="proxy ml-10 btn btn-sm btn-rounded btn-success" target="_blank">Proxy</a>';
 				}
 			}
 

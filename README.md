@@ -22,6 +22,10 @@ There are a few options that can be defined to configure Sitemad. Just add a fil
 	    "dashboards": {
 	        "/automad/gui": "/dashboard"
 	    },
+	    "proxies": {
+	        "/automad/node_modules/browser-sync": "http://localhost:3000",
+	        "/../vercel.json": "http://localhost:3000"
+	    },
 	    "ignore": "archive|node_modules|.git|.hg|vendor|cache|_modules|sitemad"
 	}
 
@@ -29,4 +33,5 @@ There are a few options that can be defined to configure Sitemad. Just add a fil
 | ---- | ----------- |
 | maxdepth | The maximum depth, Sitemad scans for index files. |
 | dashboards | A key/value map for generating login buttons. Conceptually the key is a path of any item in a web project that can be used to identify the type of project. The value is the URL slug pointing to the login page. By default only the Automad CMS is supported where for all `index.php` files that have a directory `/automad/gui` as a direct sibling, a button to a page with the slug `/dashboard` is generated. Note that it is important to understand that the key is only used to identify a project. It must be a path that typically exists in a project with the given dashboard slug. |
+| proxies | A key/value map for adding custom proxy links. Similar to the `dashboards` option, the key represents a relative path of a project. In case one of these paths exist, a proxy link is generated using the given value as URL prefix. |
 | ignore | A regex of items that are ignored when performing a scan such as the `node_modules` directory. |
